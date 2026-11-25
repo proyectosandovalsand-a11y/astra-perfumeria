@@ -1,0 +1,11 @@
+{
+  "name": "astra-perfumeria",
+  "version": "1.0.0",
+  "description": "Tienda web de escritorio de Astra Perfumería: catálogo, carrito, checkout y pago simulado.",
+  "scripts": {
+    "test": "node --test tests/logica.test.js"
+  },
+  "keywords": ["perfumeria", "tienda", "html", "css", "javascript"],
+  "author": "Luis Enrique López Botina",
+  "license": "MIT"
+}

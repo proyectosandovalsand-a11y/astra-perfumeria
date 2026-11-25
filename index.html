@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astra Perfumería | Fragancias que dejan huella</title>
+  <meta name="description" content="Astra Perfumería: catálogo de colonias y perfumes con compra en línea.">
+  <link rel="icon" href="img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== ENCABEZADO ===== -->
+  <header class="header">
+    <div class="contenedor header__inner">
+      <a href="#inicio" class="header__logo"><img src="img/logo.jpg" alt="Astra Perfumería"></a>
+      <nav class="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="btn-carrito" id="btnAbrirCarrito" aria-label="Abrir carrito">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+        <span>Carrito</span>
+        <span class="badge" id="badgeCarrito">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <div class="contenedor hero__inner">
+      <div class="hero__texto">
+        <p class="eyebrow">Nueva colección 2026</p>
+        <h1>El arte de <em>dejar huella</em></h1>
+        <p class="hero__sub">Fragancias seleccionadas para cada momento. Envíos a toda Colombia y pago seguro.</p>
+        <div class="hero__acciones">
+          <a href="#catalogo" class="btn btn--oro">Ver catálogo</a>
+          <a href="#nosotros" class="btn btn--linea">Conócenos</a>
+        </div>
+      </div>
+      <div class="hero__imagen">
+        <div class="hero__aro"></div>
+        <img src="img/productos/aurum-elixir.svg" alt="Fragancia Aurum Élixir">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BENEFICIOS ===== -->
+  <section class="beneficios">
+    <div class="contenedor beneficios__grid">
+      <div><strong>Envío gratis</strong><span>En compras desde $ 600.000</span></div>
+      <div><strong>100% originales</strong><span>Garantía en cada fragancia</span></div>
+      <div><strong>Pago seguro</strong><span>Tarjeta, PSE o contraentrega</span></div>
+      <div><strong>Asesoría</strong><span>Te ayudamos a elegir tu aroma</span></div>
+    </div>
+  </section>
+
+  <!-- ===== CATÁLOGO ===== -->
+  <section class="catalogo contenedor" id="catalogo">
+    <div class="seccion__titulo">
+      <p class="eyebrow">Nuestras fragancias</p>
+      <h2>Catálogo</h2>
+    </div>
+
+    <div class="herramientas">
+      <div class="filtros" id="filtros">
+        <button class="filtro activo" data-cat="Todos">Todos</button>
+        <button class="filtro" data-cat="Hombre">Hombre</button>
+        <button class="filtro" data-cat="Mujer">Mujer</button>
+        <button class="filtro" data-cat="Unisex">Unisex</button>
+      </div>
+      <div class="herramientas__der">
+        <input type="search" id="buscador" placeholder="Buscar por nombre o familia…">
+        <select id="orden">
+          <option value="">Ordenar: destacados</option>
+          <option value="precio-asc">Precio: menor a mayor</option>
+          <option value="precio-desc">Precio: mayor a menor</option>
+          <option value="nombre">Nombre A–Z</option>
+        </select>
+      </div>
+    </div>
+
+    <p class="resultados" id="resultados"></p>
+    <div class="grid-productos" id="gridProductos"></div>
+  </section>
+
+  <!-- ===== NOSOTROS ===== -->
+  <section class="nosotros" id="nosotros">
+    <div class="contenedor nosotros__inner">
+      <div>
+        <p class="eyebrow">Sobre Astra</p>
+        <h2>Una estrella en cada fragancia</h2>
+      </div>
+      <p>En Astra Perfumería creemos que un aroma cuenta quién eres. Seleccionamos fragancias de alta concentración, con notas cuidadosamente equilibradas, para que encuentres la que mejor te representa.</p>
+    </div>
+  </section>
+
+  <!-- ===== PIE ===== -->
+  <footer class="footer" id="contacto">
+    <div class="contenedor footer__inner">
+      <div>
+        <img src="img/logo.jpg" alt="Astra Perfumería" class="footer__logo">
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>Cúcuta, Norte de Santander</p>
+        <p>contacto@astraperfumeria.com</p>
+        <p>+57 300 000 0000</p>
+      </div>
+      <div>
+        <h4>Horario</h4>
+        <p>Lunes a sábado</p>
+        <p>9:00 a. m. – 7:00 p. m.</p>
+      </div>
+    </div>
+    <p class="footer__copy">© 2026 Astra Perfumería · Proyecto académico</p>
+  </footer>
+
+  <!-- ===== MODAL DETALLE PRODUCTO ===== -->
+  <div class="overlay" id="modalProducto" hidden>
+    <div class="modal modal--producto" role="dialog" aria-modal="true">
+      <button class="cerrar" data-cerrar aria-label="Cerrar">&times;</button>
+      <div id="detalleProducto"></div>
+    </div>
+  </div>
+
+  <!-- ===== CARRITO (panel lateral) ===== -->
+  <div class="overlay overlay--lateral" id="panelCarrito" hidden>
+    <aside class="carrito" role="dialog" aria-modal="true">
+      <div class="carrito__cabecera">
+        <h3>Tu carrito</h3>
+        <button class="cerrar" data-cerrar aria-label="Cerrar">&times;</button>
+      </div>
+      <div class="carrito__items" id="itemsCarrito"></div>
+      <div class="carrito__pie" id="pieCarrito"></div>
+    </aside>
+  </div>
+
+  <!-- ===== CHECKOUT ===== -->
+  <div class="overlay" id="modalCheckout" hidden>
+    <div class="modal modal--checkout" role="dialog" aria-modal="true">
+      <button class="cerrar" data-cerrar aria-label="Cerrar">&times;</button>
+      <div class="pasos">
+        <span class="paso activo" data-paso="1">1. Datos</span>
+        <span class="paso" data-paso="2">2. Pago</span>
+        <span class="paso" data-paso="3">3. Confirmación</span>
+      </div>
+
+      <div class="checkout__cuerpo">
+        <!-- Paso 1: datos del cliente -->
+        <form id="formCliente" class="formulario" novalidate>
+          <h3>Datos del cliente</h3>
+          <div class="campos">
+            <label class="campo campo--doble">Nombre completo<input name="nombre" autocomplete="name"><small></small></label>
+            <label class="campo">Cédula<input name="documento" inputmode="numeric" maxlength="10"><small></small></label>
+            <label class="campo">Celular<input name="telefono" inputmode="numeric" maxlength="10" placeholder="3001234567"><small></small></label>
+            <label class="campo campo--doble">Correo electrónico<input name="correo" type="email" autocomplete="email"><small></small></label>
+            <label class="campo campo--doble">Dirección de entrega<input name="direccion" autocomplete="street-address"><small></small></label>
+            <label class="campo">Ciudad<input name="ciudad"><small></small></label>
+            <label class="campo">Notas (opcional)<input name="notas" placeholder="Apto, referencia…"></label>
+          </div>
+          <button type="submit" class="btn btn--oro btn--ancho">Continuar al pago</button>
+        </form>
+
+        <!-- Paso 2: pago -->
+        <form id="formPago" class="formulario" novalidate hidden>
+          <h3>Método de pago</h3>
+          <div class="metodos">
+            <label class="metodo"><input type="radio" name="metodo" value="tarjeta" checked><span>Tarjeta crédito / débito</span></label>
+            <label class="metodo"><input type="radio" name="metodo" value="pse"><span>PSE</span></label>
+            <label class="metodo"><input type="radio" name="metodo" value="contraentrega"><span>Contraentrega</span></label>
+          </div>
+
+          <div class="bloque-metodo" data-metodo="tarjeta">
+            <div class="campos">
+              <label class="campo campo--doble">Titular de la tarjeta<input name="titular"><small></small></label>
+              <label class="campo campo--doble">Número de tarjeta<input name="numero" inputmode="numeric" maxlength="23" placeholder="4111 1111 1111 1111"><small></small></label>
+              <label class="campo">Vencimiento<input name="vencimiento" placeholder="MM/AA" maxlength="5"><small></small></label>
+              <label class="campo">CVV<input name="cvv" inputmode="numeric" maxlength="4"><small></small></label>
+            </div>
+            <p class="nota">Simulación académica: usa la tarjeta de prueba 4111 1111 1111 1111. No se realiza ningún cobro real.</p>
+          </div>
+
+          <div class="bloque-metodo" data-metodo="pse" hidden>
+            <div class="campos">
+              <label class="campo campo--doble">Banco
+                <select name="banco">
+                  <option value="">Selecciona tu banco</option>
+                  <option>Bancolombia</option><option>Banco de Bogotá</option><option>Davivienda</option>
+                  <option>BBVA</option><option>Banco de Occidente</option><option>Nequi</option>
+                </select><small></small></label>
+            </div>
+          </div>
+
+          <div class="bloque-metodo" data-metodo="contraentrega" hidden>
+            <p class="nota">Pagarás en efectivo al recibir tu pedido.</p>
+          </div>
+
+          <div class="acciones">
+            <button type="button" class="btn btn--linea" id="btnVolver">Volver</button>
+            <button type="submit" class="btn btn--oro" id="btnPagar">Pagar</button>
+          </div>
+        </form>
+
+        <!-- Procesando -->
+        <div class="procesando" id="procesando" hidden>
+          <div class="spinner"></div>
+          <p>Procesando tu pago…</p>
+        </div>
+
+        <!-- Paso 3: pago exitoso -->
+        <div class="exito" id="exito" hidden></div>
+
+        <!-- Resumen lateral -->
+        <aside class="resumen" id="resumenCheckout"></aside>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/productos.js"></script>
+  <script src="js/logica.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
